@@ -14,7 +14,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   getProducts(){
-    return this.httpClient.get((this.baseUrl + '/products'))
+    return this.httpClient.get((this.baseUrl + 'products'))
   }
   public getProduct(id: number) {
     return this.httpClient.get(`${this.baseUrl+ 'product/' + id}`);
@@ -30,13 +30,14 @@ export class ProductService {
     }
   create(product: Product){
     //http://localhost:8080/products-ut-wo-db/rest/product/create
-    this.httpClient.post<Product>(this.baseUrl + '/product/create', product).subscribe(data =>{
+    this.httpClient.post<Product>(this.baseUrl + 'product/create', product).subscribe(data =>{
       console.log(data);
     },
     error =>
     console.log('Could not create product.'));
   }
   availableProducts(){
-    return this.httpClient.get(this.baseUrl + '/availableProducts');
+    console.log(this.baseUrl);
+    return this.httpClient.get(this.baseUrl + 'availableProducts');
   }
 }
