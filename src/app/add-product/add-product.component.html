@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+           <h1>Add Product</h1>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div id="user-data">
+              <div class="row">
+                    <div class="col-lg-6">
+                      <label>Product Description (English)</label>
+                      <input type="text" id="productDescriptionEnglish" name="productDescriptionEnglish" class="form-control" [(ngModel)]="product.productDescriptionEnglish" class="form-control"  required #productDescriptionEnglish="ngModel">
+                      <span class="help-block" *ngIf="(submitted && !productDescriptionEnglish.valid) ||(!productDescriptionEnglish.valid && productDescriptionEnglish.touched)">Product Description (English) is required</span>
+                    </div>
+                    <div class="col-lg-6">
+                      <label>Production Description (French)</label>
+                      <input type="text" id="productDescriptionFrench" name="productDescriptionFrench" class="form-control" [(ngModel)]="product.productDescriptionFrench" required #productDescriptionFrench="ngModel">
+                      <span class="help-block" *ngIf="(submitted && !productDescriptionFrench.valid) ||(!productDescriptionFrench.valid && productDescriptionFrench.touched)">Product Description (French) is required</span>
+                    </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                    <label>Brand Name (English)</label>
+                    <input type="text" id="brandNameEnglish" name="brandNameEnglish" class="form-control" [(ngModel)]="product.brandNameEnglish" required #brandNameEnglish="ngModel">
+                    <span class="help-block" *ngIf="(submitted && !brandNameEnglish.valid) ||(!brandNameEnglish.valid && brandNameEnglish.touched)">Brand Name (English) is required</span>
+                  </div>
+                  <div class="col-lg-6">
+                      <label>Brand Name (French)</label>
+                      <input type="text" id="brandNameFrench" name="brandNameFrench" class="form-control" [(ngModel)]="product.brandNameFrench" class="form-control"  required #brandNameFrench="ngModel">
+                      <span class="help-block" *ngIf="(submitted && !brandNameFrench.valid) ||(!brandNameFrench.valid && brandNameFrench.touched)">Brand Name (French) is required</span>
+  
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                    <label>Target Market</label>
+                    <select id="targetMarket" name="targetMarket" [(ngModel)]="product.targetMarket" class="form-control" required #targetMarket="ngModel">
+                      <option value=""></option>
+                      <option value="Canada">Canada</option>
+                      <option value="US">US</option>
+                    </select>
+                    <span class="help-block" *ngIf="(submitted && !targetMarket.valid) ||(!targetMarket.valid && targetMarket.touched)">Target Market(French) is required</span>
+  
+                  </div>
+                  <div class="col-lg-6">
+                      <label>Status</label>
+                      <select id="status" name="status" [(ngModel)]="product.status" class="form-control" required #status="ngModel">
+                          <option value=""></option>
+                          <option value="Active">Active</option>
+                          <option value="Draft">Draft</option>
+                      </select>
+                      <span class="help-block" *ngIf="(submitted && !status.valid) ||(!status.valid && status.touched)">Status is required</span>
+  
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <label>Product Type</label>
+                  <select id="productType" name="productType" [(ngModel)]="product.productType" class="form-control" required #productType="ngModel">
+                    <option value=""></option>
+                    <option value="Pallet">Pallet</option>
+                    <option value="Case">Case</option>
+                    <option value="Consumer or Base">Consumer or Base</option>
+                  </select>
+                  <span class="help-block" *ngIf="(submitted && !productType.valid) ||(!productType.valid && productType.touched)">Product Type is required</span>
+  
+                </div>
+                <div class="col-lg-6">
+                    <label>Product Image (url)</label>
+                    <input type="text" id="productImageUrl" name="productImageUrl" class="form-control" [(ngModel)]="product.productImageUrl" class="form-control" required #productImageUrl="ngModel">
+                    <span class="help-block" *ngIf="(submitted && !productImageUrl.valid) ||(!productImageUrl.valid && productImageUrl.touched)">Please select product image.</span>
+  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                  <label>Product Identification (Integer number)</label>
+                  <input type="number" id="additionalProductIdentification" name="additionalProductIdentification" class="form-control" [(ngModel)]="product.additionalProductIdentification" class="form-control"  required #additionalProductIdentification="ngModel">
+                  <span class="help-block" *ngIf="(submitted && !additionalProductIdentification.valid) ||(!additionalProductIdentification.valid && additionalProductIdentification.touched)">Product Identification is required.</span>
+  
+                </div>
+  
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-lg-6">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <span class="message">{{msg}}</span>
+                </div>
+  
+            </div>
+  
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>  
