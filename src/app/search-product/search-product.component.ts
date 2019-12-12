@@ -28,6 +28,7 @@ export class SearchProductComponent implements OnInit {
       this.productService.getProductByIdDescr(this.productId, this.productDescriptionEnglish).subscribe((data: any) => {
         console.log(data);
         this.products = [];
+        if(data != null)
         this.products.push(<Product>data);
 
       }, (err: any) => {
@@ -38,6 +39,7 @@ export class SearchProductComponent implements OnInit {
       this.productService.getProduct(this.productId).subscribe((data: any) => {
         console.log(data);
         this.products = [];
+        if(data != null)
         this.products.push(<Product>data);
 
       }, (err: any) => {
@@ -65,6 +67,7 @@ export class SearchProductComponent implements OnInit {
       this.productService.getProducts().subscribe((data: any) => {
 
         console.log(data);
+        if(data != null)
         this.products = <Product[]>data;
 
       }, (err: any) => {

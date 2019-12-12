@@ -50,7 +50,7 @@ export class AddProductComponent implements OnInit {
     {
       if(confirm('You are about to submit this entry.\n Are you sure?')) {
         this.productService.create(myform.value);
-        this.msg = "";
+        this.msg = "Your item is submitted :)";
         this.submitted = false;
         myform.reset();
       }
